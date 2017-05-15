@@ -1,0 +1,110 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>xc-header test</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../../web-component-tester/browser.js"></script>
+    <script src="test-helpers.js"></script>
+  </head>
+  <body>
+    <xc-footer></xc-footer>
+
+    <script>
+      /* eslint no-undef:0 */
+      suite('<xc-footer>', function() {
+        var footer;
+
+        setup(function() {
+          footer = document.querySelector('xc-footer');
+        });
+
+        suite('rendering', function() {
+          test('is ok', function() {
+            expect(footer).to.be.ok;
+          });
+          a11ySuiteTest();
+        });
+
+        suite('class', function() {
+          test('is xc-footer', function() {
+            expect(XCFooter.is).to.equal('xc-footer');
+          });
+
+          test('htmlMarkup returns a string', function() {
+            expect(XCFooter.htmlMarkup).to.be.a('string');
+          });
+
+          test('cssMarkup returns a string', function() {
+            expect(XCFooter.cssMarkup).to.be.a('string');
+          });
+
+          test('cssFocusMarkup returns a string', function() {
+            expect(XCFooter.cssFocusMarkup).to.be.a('string');
+          });
+        });
+
+        suite('attributes', function() {
+          test('setting width to 800', function() {
+            footer.setAttribute('width', '800');
+            var maxWidth = '848px';
+            expect(footer.$('panels').style.maxWidth).to.equal(maxWidth);
+            expect(footer.$('bottom-container').style.maxWidth).to.equal(maxWidth);
+          });
+
+          test('removing width attribute', function() {
+            footer.setAttribute('width', '800');
+            footer.removeAttribute('width');
+            var maxWidth = 'none';
+            expect(footer.$('panels').style.maxWidth).to.equal(maxWidth);
+            expect(footer.$('bottom-container').style.maxWidth).to.equal(maxWidth);
+          });
+
+          test('links are not external by default', function() {
+            var link = footer.querySelector('a');
+            expect(link.getAttribute('target')).to.be.null;
+          });
+
+          test('adding external-links makes links target external', function() {
+            footer.setAttribute('external-links', true);
+            var link = footer.querySelector('a');
+            expect(link.getAttribute('target')).to.equal('_blank');
+          });
+        });
+
+        suite('mobile', function() {
+          suite('panels', function() {
+            test('displays first 3 links', function() {
+              var li = footer.querySelector('.xc-footer--li:nth-child(3)');
+              expect(isHidden(li)).to.be.false;
+            });
+            test('hides 4 link', function() {
+              var li = footer.querySelector('.xc-footer--li:nth-child(4)');
+              expect(isHidden(li)).to.be.true;
+            });
+
+            suite('toggle', function() {
+              test('clicking toggle adds xc-opened', function() {
+                var panel = footer.querySelector('.xc-footer--panel');
+                footer.querySelector('.xc-footer--toggle').click();
+                expect(panel.classList.contains('xc-opened')).to.be.true;
+              });
+
+              test('opened panels show all li', function() {
+                var panel = footer.querySelector('.xc-footer--panel li:last-child');
+                expect(isHidden(panel)).to.be.false;
+              });
+
+              test('clicking toggle again removes xc-opened', function() {
+                var panel = footer.querySelector('.xc-footer--panel');
+                footer.querySelector('.xc-footer--toggle').click();
+                expect(panel.classList.contains('xc-opened')).to.be.false;
+              });
+            });
+    });
+        });
+      });
+    </script>
+  </body>
+</html>

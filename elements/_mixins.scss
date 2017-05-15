@@ -1,0 +1,100 @@
+@import "variables";
+
+@mixin shadow {
+box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+@mixin xc-focus {
+    &:focus {
+    outline: 0;
+    border: 1px dotted rgb(163, 163, 163); /* #a3a3a3 */
+    border-radius: 4px;
+    }
+}
+
+@mixin xc-screen-reader-text {
+    .xc-screen-reader-text {
+        position: absolute !important;
+        display: block;
+        visibility: visible;
+        overflow: hidden;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        clip: rect(0px, 0px, 0px, 0px); /* deprecated */
+        clip-path: polygon(0px 0px, 0px 0px, 0px 0px, 0px 0px);
+    }
+}
+
+
+@mixin xc-focus-halo {
+  content: '';
+position: absolute;
+width: 100%;
+height: 100%;
+padding: 4px;
+top: -5px;
+left: -5px;
+border: 1px dotted rgb(163, 163, 163);
+display: none;
+pointer-events: none;
+z-index: 1;
+outline: 0;
+}
+
+@mixin xc-header--link {
+    display: block;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: normal;
+    text-decoration: none;
+    color: $cool-grey;
+    border: 1px solid transparent;
+    &:hover, &.xc-header--active {
+        color: #fff;
+    }
+}
+
+@mixin roundbutton {
+    height: 48px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: auto;
+    border-radius: 40px;
+    outline: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    line-height: 24px;
+    color: $blue-deep;
+    border: 1px solid $blue-deep;
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+    z-index: 2;
+    &:before {
+      @include xc-focus-halo;
+      border-radius: 40px;
+      box-sizing: content-box;
+    }
+    &:hover:before, &:active:before {
+        display: block;
+    }
+    &:hover, &:active {
+        background-color: $blue-ocean;
+        color: #fff;
+        border: 1px solid transparent;
+        border-radius: 40px !important;
+    }
+    &:focus:before {
+        display: block;
+    }
+    &:focus {
+        background-color: $blue-ocean;
+        color: #fff;
+        border: 1px solid transparent;
+        border-radius: 40px !important;
+    }
+
+}

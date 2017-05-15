@@ -1,0 +1,130 @@
+{
+    "signin": {
+        "signin": {
+            "url": "http://my.xfinity.com/oauth/login?continue=",
+            "label": "Sign In"
+        },
+        "signout": {
+            "url": "https://login.comcast.net/oauth/sp-logout?client_id=Xfinity-Portal",
+            "label": "Sign Out"
+        },
+        "profile": {
+            "url": "https://customer.xfinity.com/#/users/me",
+            "label": "Hi, "
+        }
+    },
+    "logo": {
+        "url": "https://www.xfinity.com/",
+        "label": "XFINITY"
+    },
+    "slimNav": [
+        {
+            "name": "XFINITY",
+            "url": "https://www.xfinity.com",
+            "label": "XFINITY"
+        },
+        {
+            "name": "comcastbusiness",
+            "url": "http://business.comcast.com/triple-play-bundle?CMP=ILC:MA:GNV:SUB:COM:GEN:INT55c0dd2b31b24&utm_source=dotnet&utm_medium=dotnet&utm_campaign=headerlink",
+            "label": "Comcast Business"
+        }
+    ],
+    "navigation": [
+        {
+            "name": "myxfinity",
+            "url": "http://my.xfinity.com/",
+            "label": "My XFINITY"
+        },
+        {
+            "name": "shop",
+            "url": "https://www.xfinity.com/",
+            "recognized": "https://www.xfinity.com/Corporate/shop/productoverview.html",
+            "authenticated": "https://www.xfinity.com/upgrade-center/OffersLink",
+            "label": "Shop"
+        },
+        {
+            "name": "support",
+            "url": "https://www.xfinity.com/support/",
+            "label": "Support"
+        },
+        {
+            "name": "myaccount",
+            "url": "https://customer.xfinity.com/Overview/",
+            "label": "My Account"
+        }
+    ],
+    "personal": [
+            {
+                "url": "https://login.comcast.net/login?s=wnamp&ts=",
+                "svg": "../images/svgs/email.svg",
+                "label": "Email"
+            },
+            {
+                "url": "https://tv.xfinity.com",
+                "svg": "../images/svgs/tv.svg",
+                "label": "TV"
+            },
+            {
+                "url": "https://home.xfinity.com",
+                "svg": "../images/svgs/home.svg",
+                "label": "Home"
+            },
+            {
+                "type": "smart-internet",
+                "rel": "nofollow",
+                "url": "https://internet.xfinity.com/",
+                "svg": "../images/svgs/wifi.svg",
+                "label": "Internet"
+            },
+            {
+                "url": "https://connect.xfinity.com/voice",
+                "svg": "../images/svgs/phone.svg",
+                "label": "Voice"
+            },
+            {
+                "type": "personal-more",
+                "url": "http://my.xfinity.com/siteindex/",
+                "svg": "../images/svgs/more.svg",
+                "label": "More"
+            },
+            {
+                "type": "comcastbusiness",
+                "external": true,
+                "url": "https://business.comcast.com/triple-play-bundle?utm_source=dotnet&utm_medium=dotnet&utm_campaign=headerlink",
+                "label": "Comcast Business",
+                "svg": "../images/svgs/linkout.svg"
+            }
+    ],
+    "more": [
+        {
+            "url": "https://customer.xfinity.com/Secure/OneTimePayment",
+            "svg": "../images/svgs/pay_bill.svg",
+            "label": "Pay Bill"
+        },
+        {
+            "url": "https://tv.xfinity.com/listings",
+            "svg": "../images/svgs/guide.svg",
+            "label": "Live TV"
+        },
+        {
+            "url": "https://customer.xfinity.com/#/settings/account",
+            "svg": "../images/svgs/gear.svg",
+            "label": "Settings"
+        },
+        {
+            "url": "https://tv.xfinity.com/ondemand/tvseries",
+            "svg": "../images/svgs/on_demand.svg",
+            "label": "On Demand"
+        },
+        {
+            "url": "https://constantguard.xfinity.com?cid=33_6401",
+            "svg": "../images/svgs/norton.svg",
+            "label": "Norton Security"
+        },
+        {
+            "url": "https://www.xfinity.com/support/service-center-locations",
+            "svg": "../images/svgs/store_locator.svg",
+            "label": "Store Locator"
+        }
+    ]
+}

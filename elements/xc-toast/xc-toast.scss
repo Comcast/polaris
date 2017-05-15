@@ -1,0 +1,110 @@
+@import "variables";
+@import "mixins";
+
+xc-toast {
+    display: block;
+    text-align: left;
+    font-family: "XfinityStandard", helvetica, arial, sans-serif;
+    font-weight: 400;
+    position: fixed;
+    bottom: -500px;
+    color: #fff;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 20%;
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+xc-toast.opened {
+    opacity: 1;
+    bottom: 12px;
+    z-index: 10;
+    transform: translateY(0px);
+}
+
+@include xc-screen-reader-text;
+
+.xc-toast--container {
+    @include shadow;
+    background-color: $blue-moon;
+    padding: 18px $page-margin;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.xc-toast--message {
+    flex: 2 1 auto;
+    margin: 0 24px 0 0;
+    padding: 0;
+}
+
+.xc-toast--message-main {
+    display: block;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.xc-toast--message-sub {
+    font-size: 14px;
+    line-height: 21px;
+}
+.xc-toast--action {
+    @include roundbutton;
+    margin-right: 20px;
+    border-color: #fff;
+    color: #fff;
+    &:hover {
+        background: #fff;
+        color: $blue-ocean;
+        border: 1px solid transparent;
+    }
+}
+.xc-toast--action:focus {
+    background: #fff;
+    color: $blue-ocean;
+    border: 1px solid transparent;
+}
+.xc-toast--close {
+    border: 1px solid transparent;
+    background: transparent;
+    padding: 4px 4px 0 4px;
+    @include xc-focus;
+    svg {
+        width: 18px;
+        height: 18px;
+        stroke: #fff;
+        stroke-width: 5px;
+    }
+    &:hover svg {
+        stroke: $cool-grey;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    xc-toast {
+        padding: 0 $mobile-page-margin;
+    }
+    .xc-toast--container {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 28px $mobile-page-margin 18px;
+    }
+    .xc-toast--message {
+        margin: 0;
+    }
+    .xc-toast--close {
+        position: absolute;
+        top: $mobile-page-margin;
+        right: $mobile-page-margin;
+    }
+    .xc-toast--action {
+        margin: $mobile-page-margin 0 0;
+    }
+}

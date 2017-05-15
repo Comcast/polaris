@@ -1,0 +1,112 @@
+<a class="xc-header--skip" href="#xc-header--skip"><%= lang('Skip to main content') %></a>
+<div class="xc-header--slim-container" hidden>
+    <ul class="xc-header--slim-navigation-ul" role="navigation" aria-label="My Xfinity">
+        <% slimNav.forEach(link => { %>
+        <li class="xc-header--slim-navigation-li">
+            <a class="xc-header--slim-navigation-link"
+                name="<%= link.name %>"
+                href="<%= link.url %>"><%= lang(link.label) %></a>
+        </li>
+        <% }); %>
+    </ul>
+</div>
+<div class="xc-header--container">
+    <a class="xc-header--xfinity-logo" href="<%= logo.url %>" aria-label="xfinity.com">
+        <%- include('../images/svgs/xfinity.svg'); %>
+    </a>
+    <div class="xc-header--container-nav" role="navigation" aria-label="My Xfinity">
+        <ul class="xc-header--navigation-ul">
+            <% navigation.forEach(link => { %>
+            <li class="xc-header--navigation-li">
+                <a class="xc-header--navigation-link"
+                    name="<%= link.name %>"
+                    href="<%= link.url %>"
+                    <% if(link.name == 'shop') { %>
+                    data-unrecognized="<%= link.url %>"
+                    data-recognized="<%= link.recognized %>"
+                    data-authenticated="<%= link.authenticated %>"
+                    ><%= lang(link.label) %><span>/<%= lang('Upgrade') %></span></a>
+                    <% } else { %>
+                    ><%= lang(link.label) %></a>
+                    <% } %>
+            </li>
+            <% }); %>
+        </ul>
+        <ul class="xc-header--personal-ul">
+            <% personal.forEach(link => { %>
+            <li class="xc-header--personal-li <%= link.type %>">
+                <% if(link.type !== 'personal-more') { %>
+                <a class="xc-header--personal-link" name="<%= link.label.toLowerCase() %>" href="<%= link.url %>"<% if (link.rel){ %> rel="<%= link.rel %>"<% } %> <%= external(link.external) %>>
+                    <span class="xc-header--personal-info"><%= lang(link.label) %></span>
+                    <% if(link.label == 'Email') { %>
+                    <div class="xc-header--email-count" hidden></div>
+                    <% } %>
+                    <%- include(link.svg); %>
+                </a>
+                <% } %>
+                <% if(link.type === 'personal-more') { %>
+                <button class="xc-header--personal-link xc-header--personal-button" name="<%= link.label.toLowerCase() %>">
+                    <span class="xc-screen-reader-text"><%= lang(link.label) %></span>
+                    <%- include(link.svg); %>
+                </button>
+                <ul class="xc-header--more-ul" data-hide hidden>
+                    <% more.forEach(link => { %>
+                    <li class="xc-header--more-li">
+                        <a class="xc-header--more-link <%= link.type %>" href="<%= link.url %>">
+                            <%- include(link.svg); %>
+                            <%= lang(link.label) %>
+                        </a>
+                    </li>
+                    <% }); %>
+                    <li class="xc-header--more-li">
+                        <a class="xc-header--more-link more-from-xfinity" href="http://my.xfinity.com/siteindex/?cid=nav_more_siteindex">
+                            <%= lang('More from XFINITY'); %>
+                        </a>
+                    </li>
+                </ul>
+                <% } %>
+            </li>
+            <% }); %>
+        </ul>
+        <ul class="xc-header--notifications-ul">
+            <li id="xc-header--notifications-summary" class="xc-header--notifications-summary">
+                <h3></h3>
+            </li>
+            <li class="xc-header--notifications-li" data-type="notification">
+                <a class="xc-header--notifications-link" aria-describedby="xc-header--notifications-summary" href="">
+                    <p class="xc-header--notifications-p">
+                        <span class="xc-header--notifications-main">
+                        </span>
+                        <span class="xc-header--notifications-sub">
+                        </span>
+                    </p>
+                </a>
+                <button class="xc-header--notifications-close">
+                    <span class="xc-screen-reader-text"><%= lang('Dismiss') %></span>
+                    <%- include('../images/svgs/x.svg'); %>
+                </button>
+            </li>
+        </ul>
+    </div>
+    <div class="xc-header--signin-container xc-unrecognized">
+        <a class="xc-header--signin-link" href="<%= signin.signin.url %>"><%= lang(signin.signin.label) %></a>
+        <div class="xc-header--signin-container--authenticated">
+            <div class="xc-header--notification-count--container" hidden>
+                <svg viewBox='0 0 14 16'>
+                    <path fill-rule='evenodd' d='M14 12v1H0v-1l.73-.58c.77-.77.81-2.55 1.19-4.42C2.69 3.23 6 2 6 2c0-.55.45-1 1-1s1 .45 1 1c0 0 3.39 1.23 4.16 5 .38 1.88.42 3.66 1.19 4.42l.66.58H14zm-7 4c1.11 0 2-.89 2-2H5c0 1.11.89 2 2 2z'></path>
+                </svg>
+                <div class="xc-header--notification-count"></div>
+            </div>
+            <a class="xc-header--signin-profile-link" href="<%= signin.profile.url %>" aria-label="<%= lang('View your Account') %>">
+            </a>
+            <a class="xc-header--signin-signout-link" href="<%= signin.signout.url %>"><%= lang(signin.signout.label) %></a>
+        </div>
+    </div>
+    <button class="xc-header--hamburger" type="button" aria-haspopup="true" aria-expanded="false">
+        <span class="xc-screen-reader-text">Open </span>
+        <%= lang('Menu') %>
+        <%- include('../images/svgs/hamburger.svg'); %>
+        <%- include('../images/svgs/x.svg'); %>
+    </button>
+</div>
+<a class="xc-header--skip" name="xc-header--skip" tabindex="-1" id="xc-header--skip"></a>

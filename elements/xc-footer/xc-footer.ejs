@@ -1,0 +1,70 @@
+<div class="xc-footer--panels">
+    <% panels.forEach(panel => { %>
+    <div class="xc-footer--panel">
+        <button class="xc-footer--toggle">
+            <%= lang('Show') %>
+            <span class="xc-footer--toggle-show">
+                <%= lang('More') %>
+            </span>
+            <span class="xc-footer--toggle-hide">
+                <%= lang('Less') %>
+            </span>
+        </button>
+        <h3 class="xc-footer--heading">
+            <%= lang(panel.heading.label) %>
+        </h3>
+        <ul class="xc-footer--list">
+            <% panel.links.forEach(link => { %>
+            <li class="xc-footer--li">
+                <a
+                    <% if(!link.url.match(/(www|my)\.xfinity\.com/)) { %>
+                    rel="nofollow"
+                    <% } %>
+                    class="xc-footer--link" href="<%= link.url %>"><%= lang(link.label); %></a>
+            </li>
+            <% }); %>
+        </ul>
+    </div>
+    <% }); %>
+</div>
+<div class="xc-footer--bottom">
+    <div class="xc-footer--bottom-container">
+        <a class="xc-footer--comcast-logo" href="http://www.xfinity.com">
+            Comcast
+        </a>
+        <ul class="xc-footer--terms"
+            <!--# echo var="UPDATED" -->
+        >
+            <li class="xc-footer--terms-li">
+                <a class="xc-footer--terms-link" href="http://my.xfinity.com/adinformation/"><%= lang('Ad Choices'); %></a>
+            </li>
+            <li class="xc-footer--terms-li">
+                <a class="xc-footer--terms-link" href="http://my.xfinity.com/privacy/" id="xc-footer--privacy"><%= lang('Privacy Policy'); %></a>
+            </li>
+            <li class="xc-footer--terms-li">
+                <a class="xc-footer--terms-link" href="http://my.xfinity.com/terms/" id="xc-footer--terms"><%= lang('Terms of Service'); %></a>
+            </li>
+        </ul>
+        <ul class="xc-footer--social">
+            <li class="xc-footer--social-li">
+                <a rel="nofollow" class="xc-footer--social-link xc-footer--twitter" href="https://twitter.com/XFINITY">
+                    <%= lang('Twitter - Follow us for exclusive deals'); %>
+                </a>
+            </li>
+            <li class="xc-footer--social-li">
+                <a rel="nofollow" class="xc-footer--social-link xc-footer--youtube" href="http://www.youtube.com/user/xfinity?feature=results_main">
+                    <%= lang('YouTube – Find tutorials and demos'); %>
+                </a>
+            </li>
+            <li class="xc-footer--social-li">
+                <a rel="nofollow" class="xc-footer--social-link xc-footer--facebook" href="http://www.facebook.com/xfinity">
+                    <%= lang('Facebook – Reach out on Facebook'); %>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<h4 class="xc-footer--copyright">
+    <a class="xc-footer--copyright-link" href="http://www.xfinity.com">&#169;
+    &nbsp;<!--# config timefmt="%Y" --><!--# echo var="date_gmt" -->&nbsp;Comcast</a>
+</h4>

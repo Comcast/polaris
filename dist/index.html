@@ -1,0 +1,445 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Polaris Web Component</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="polaris.js" async></script>
+    <style>
+      xc-header { display: block; min-height: 44px; background: #000; }
+    </style>
+    <style>
+      body, html {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: arial, sans-serif;
+      }
+
+      nav {
+        float: left;
+        width: 120px;
+      }
+
+      .navigation {
+        margin-top: 80px;
+        list-style: none;
+        padding-left: 15px;
+      }
+      .navigation li {
+        padding-top: 12px;
+      }
+
+      section {
+        margin: 40px 10px 80px 140px;
+      }
+
+      .features {
+        text-align: center;
+        list-style: none;
+        padding: 12px 24px;
+        margin: 0;
+        background: #f1f1f1;
+      }
+      .features li {
+        display: inline-block;
+      }
+      .features a {
+        padding-right: 5px;
+      }
+      .features a, .features a:visited, nav a {
+        text-decoration: none;
+        color: #00619a;
+      }
+      .features a:hover, nav a:hover {
+        text-decoration: underline;
+      }
+
+      h2 {
+        margin-top: 60px;
+      }
+
+      dt {
+        font-weight: bold;
+        float: left;
+        width: 100px;
+        clear: left;
+      }
+      dd {
+        font-weight: normal;
+        float: left;
+        margin: 0 0 30px 20px;
+        max-width: 800px;
+      }
+      .values {
+        color: green;
+        font-weight: bold;
+      }
+      /* Style the list */
+      ul.tab {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          border: 1px solid #ccc;
+          background-color: #f1f1f1;
+      }
+
+      /* Float the list items side by side */
+      ul.tab li {float: left;}
+
+      /* Style the links inside the list items */
+      ul.tab li a {
+          display: inline-block;
+          color: black;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          transition: 0.3s;
+          font-size: 17px;
+      }
+
+      /* Change background color of links on hover */
+      ul.tab li a:hover {background-color: #ddd;}
+
+      /* Create an active/current tablink class */
+      ul.tab li a:focus, .active {background-color: #ccc;}
+
+
+      /* Pretty printing styles. Used with prettify.js. */
+      /* Vim sunburst theme by David Leibovic */
+
+      pre .str, code .str { color: #65B042; } /* string  - green */
+      pre .kwd, code .kwd { color: #E28964; } /* keyword - dark pink */
+      pre .com, code .com { color: #AEAEAE; font-style: italic; } /* comment - gray */
+      pre .typ, code .typ { color: #89bdff; } /* type - light blue */
+      pre .lit, code .lit { color: #3387CC; } /* literal - blue */
+      pre .pun, code .pun { color: #fff; } /* punctuation - white */
+      pre .pln, code .pln { color: #fff; } /* plaintext - white */
+      pre .tag, code .tag { color: #89bdff; } /* html/xml tag    - light blue */
+      pre .atn, code .atn { color: #bdb76b; } /* html/xml attribute name  - khaki */
+      pre .atv, code .atv { color: #65B042; } /* html/xml attribute value - green */
+      pre .dec, code .dec { color: #3387CC; } /* decimal - blue */
+
+      pre.prettyprint, code.prettyprint {
+        background-color: #000;
+        border-radius: 8px;
+        font-size: 14px;
+      }
+
+      pre.prettyprint {
+        padding: 1em;
+        word-break: break-all;
+        white-space: pre-wrap;
+      }
+
+
+      /* Specify class=linenums on a pre to get line numbering */
+      ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE; } /* IE indents via margin-left */
+      li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
+      /* Alternate shading for lines */
+      li.L1,li.L3,li.L5,li.L7,li.L9 { }
+
+      @media print {
+        pre .str, code .str { color: #060; }
+        pre .kwd, code .kwd { color: #006; font-weight: bold; }
+        pre .com, code .com { color: #600; font-style: italic; }
+        pre .typ, code .typ { color: #404; font-weight: bold; }
+        pre .lit, code .lit { color: #044; }
+        pre .pun, code .pun { color: #440; }
+        pre .pln, code .pln { color: #000; }
+        pre .tag, code .tag { color: #006; font-weight: bold; }
+        pre .atn, code .atn { color: #404; }
+        pre .atv, code .atv { color: #060; }
+      }
+
+      xc-footer {
+        clear: both;
+      }
+      @media only screen and (max-width: 1000px) {
+        nav {
+          display: none;
+        }
+        section {
+          margin: 12px;
+        }
+        .features {
+          text-align: left;
+          padding: 12px;
+        }
+      }
+    </style>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" async></script>
+  </head>
+  <body>
+     <xc-header
+          tab="myxfinity"
+          client-id="polaris"
+          external-links></xc-header>
+
+          <ul class="features">
+            <li>Demo Features:</li>
+            <li><a href="#" onclick="doLogin();">Login</a></li>
+            <li><a href="#" onclick="addNotifications();">Show Notifications</a></li>
+            <li><a href="#" onclick="clearNotificationsTracking();">Clear LocalStorage</a></li>
+            <li><a href="#" onclick="showToast();">Show Toast</a></li>
+          </ul>
+
+        <nav>
+          <ul class="navigation">
+            <li>
+              <a href="#overview">Overview</a>
+            </li>
+            <li>
+              <a href="#browser">Browser Support</a>
+            </li>
+            <li>
+              <a href="#a11y">Accessibility</a>
+            </li>
+            <li>
+              <a href="#installation">Installation</a>
+            </li>
+            <li>
+              <a href="#usage">Usage</a>
+            </li>
+          </ul>
+        </nav>
+
+        <section>
+          <h1 id="overview">The New Polaris WC</h1>
+          <p>
+            Polaris is built using the latest web technology primitive, Custom Elements, which you can learn more about
+            in an <a target="_blank" href="https://developers.google.com/web/fundamentals/getting-started/primers/customelements">article</a> by Eric Bidelman.
+            By utilizing Custom Elements, we've made the implementation of the new Polaris much simpler for third parties to implement
+            without an iframe and with a total payload under 20kb. As browsers implement customElements natively the new Polaris will become
+            even faster. Currently Chrome and Safari 10.1 have customElements v1 implemented with Firefox actively developing.
+          </p>
+
+          <h2 id="browser">Browser Support</h2>
+          <p>
+            Polaris supports IE11, Chrome, Edge, Safari, Firefox, Opera mobile Chrome and mobile Safari.
+            Support typically includes the lastest two releases of a browser, as the newest browsers auto update.
+          </p>
+
+          <h2 id="a11y">Accessibility</h2>
+          <p>
+            Polaris has been fully tested by the Accessibility team at Comcast and has 0 open issues. :-)
+          </p>
+
+          <h2 id="installation">Installation</h2>
+          <p>
+            Adding the new Polaris to your site is simply including a script tag. Our server is setup
+            to return an optimized version of polaris depending on the users browser and if it has
+            customElements + ES6 Class support.
+          </p>
+          <ul class="tab">
+            <li><a href="javascript:void(0)" class="tablinks active" onclick="openTab(event, '#production')">Production</a></li>
+            <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, '#staging')">Staging</a></li>
+          </ul>
+          <pre id="production" class="prettyprint lang-html">
+&lt;script src=&quot;https://polaris.xfinity.com/polaris.js&quot; async&gt;&lt;/script&gt;
+&lt;style&gt;
+    xc-header { display: block; min-height: 44px; background: #000; }
+&lt;/style&gt;
+          </pre>
+
+          <pre id="staging" class="prettyprint lang-html" hidden>
+&lt;script src=&quot;https://polaris.staging.xfinity.com/polaris.js&quot; async&gt;&lt;/script&gt;
+&lt;style&gt;
+    xc-header { display: block; min-height: 44px; background: #000; }
+&lt;/style&gt;
+          </pre>
+
+          <p>
+          After adding the above code, you simply add the new tags to your site. If you don't
+          have a clientId, create one that represents your site!
+          </p>
+
+          <pre class="prettyprint lang-html">
+&lt;xc-header
+  tab=&quot;myxfinity&quot;
+  client-id=&quot;YOUR-CLIENT-ID&quot;
+&gt;&lt;/xc-header&gt;
+
+Your site code goes here..
+
+&lt;xc-footer
+  client-id=&quot;YOUR-CLIENT-ID&quot;
+&gt;&lt;/xc-footer&gt;
+          </pre>
+
+          <h2 id="usage">Additional Usage</h2>
+          <p>
+            The header has additional attributes that you can use to customize it. Each of the attributes can
+            be set in markup or via javascript using setAttribute or setting the value directly. Additionally
+            you can get information from Polaris such as isAuthed or firstName.
+          </p>
+            <pre class="prettyprint lang-js">
+var header = document.querySelector('xc-header');
+header.setAttribute('width', 1240);
+header.width = 1240;
+
+header.setAttribute('email-count', 150);
+header.emailCount = 150;
+
+var firstName = header.firstName;
+var isAuthed = header.isAuthed;
+//sign user out
+header.isAuthed = false;
+          </pre>
+
+          <p>
+            The following attributes are available on xc-header.
+            xc-footer only has clientId, externalLinks, width.
+          </p>
+
+          <dl>
+            <dt>client-id</dt>
+            <dd>
+              <div class="values">string</div>
+              A unique identifier for your site. This is primarily used for tracking. Please add to
+              both header and footer!
+            </dd>
+            <dt>disable-controller</dt>
+            <dd>
+              <div class="values">boolean</div>
+              Prevents polaris from loading its controller iframe which gets user information,
+              notifications, email count, etc.
+            </dd>
+            <dt>disable-email-count</dt>
+            <dd>
+              <div class="values">boolean</div>
+              Prevents polaris from calling YHM for email count.
+            </dd>
+            <dt>disable-notifications</dt>
+            <dd>
+              <div class="values">boolean</div>
+              Prevents polaris from calling notifications API.
+            </dd>
+            <dt>disable-skip</dt>
+            <dd>
+              <div class="values">boolean</div>
+              Polaris includes a skip-navigation link for accessibility. If you include your own skip link
+              for accessibility, feel free to disable the one in Polaris.
+            </dd>
+            <dt>email-count</dt>
+            <dd>
+              <div class="values">number</div>
+              Set the number of unread emails.
+            </dd>
+            <dt>external-links</dt>
+            <dd>
+              <div class="values">boolean</div>
+              Changes all the link in the header to open in a new window (target=_blank)
+            </dd>
+            <dt>first-name</dt>
+            <dd>
+              <div class="values">string</div>
+              Users first name
+            </dd>
+            <dt>is-authed</dt>
+            <dd>
+              <div class="values">boolean</div>
+              Users current authed status
+            </dd>
+            <dt>notifications</dt>
+            <dd>
+              <div class="values">object</div>
+              This must be set via javascript. See the `Show Notifications` demo and source code
+              if you want to add your own notifications. This will eventually become more of an api
+              like header.notifications.add({MY NOTIFICATION});
+            </dd>
+            <dt>sign-in-url</dt>
+            <dd>
+              <div class="values">string</div>
+              Sets the url when a user clicks signin
+            </dd>
+            <dt>sign-out-url</dt>
+            <dd>
+              <div class="values">string</div>
+              Sets the url when a user clicks signout
+            </dd>
+            <dt>slimnav</dt>
+            <dd>
+              <div class="values">boolean</div>
+              Shows "slim nav" with Xfinity and Comcast Business links.
+            </dd>
+            <dt>state</dt>
+            <dd>
+              <div class="values">string: ['authenticated', 'recognized', 'unrecognized']</div>
+              Users not signed in are considered recognized if they are on the Comcast network,
+              otherwise they are unrecognized.
+            </dd>
+            <dt>tab</dt>
+            <dd>
+              <div class="values">['myxfinity', 'shop', 'support', 'myaccount', 'tv', 'email', 'home', 'internet', 'voice']</div>
+              Sets the selected tab on polaris
+            </dd>
+            <dt>width</dt>
+            <dd>
+              <div class="values">number</div>
+              Sets the max-width of Polaris.
+            </dd>
+          </dl>
+
+    </section>
+    <xc-footer client-id="polaris" external-links></xc-footer>
+
+    <script>
+      /* eslint no-unused-vars:0 */
+      var header;
+
+      function openTab(event, name) {
+        document.querySelector(name).removeAttribute('hidden');
+        var toHide = name === '#production' ? '#staging' : '#production';
+        document.querySelector(toHide).setAttribute('hidden', true);
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        var tablinks = document.getElementsByClassName('tablinks');
+        for (var i = 0; i < tablinks.length; i++) {
+          tablinks[i].classList.remove('active');
+        }
+        event.currentTarget.classList.add('active');
+      }
+
+      function doLogin() {
+        header.isAuthed = true;
+        header.firstName = 'Chris';
+      }
+
+      function showToast() {
+        var toast = document.createElement('xc-toast');
+        toast.data = {
+          main: 'You just won a million dollars!',
+          sub: 'To spend your monopoly money click the action link',
+          links: [{
+            url: 'https://youtu.be/Q_rLkEXU4o4?t=1m43s',
+            text: 'Claim it now',
+            target: '_blank'
+          },
+          {
+            url: 'https://youtu.be/fo7WIHJr6zA',
+            text: 'Big Bucks',
+            target: '_blank'
+          }]
+        };
+        toast.setAttribute('opened', true);
+        document.body.appendChild(toast);
+      }
+
+      function addNotifications() {
+        var notifications = [{main: 'Your bill is ready.', url: 'https://customer.xfinity.com/Secure/MyAccount/?CMP=ILC:MA:BAU:SUB:COM:GEN:INT55c0dced72787', dismissable: true, maxViews: 5, id: 'BALANCE_DUE123456'}, {main: 'Thank You! Your payment has been processed.', url: 'https://customer.xfinity.com/Secure/MyAccount/?CMP=ILC:MA:BAU:SUB:COM:GEN:INT55c0dced735bf', dismissable: true, maxViews: 5, id: 'FULL_PAYMENT12345678'}];
+        header.notifications = notifications;
+      }
+
+      function clearNotificationsTracking() {
+        localStorage.removeItem('notifications');
+      }
+
+      setTimeout(function() {
+        header = document.querySelector('xc-header');
+      }, 200);
+    </script>
+  </body>
+</html>

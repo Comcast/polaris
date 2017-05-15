@@ -1,0 +1,17 @@
+<svg focusable="false" viewBox="0 0 30 30">
+    <defs>
+        <style>
+            .cls-1{fill:#fff}.cls-2{mask:url(#mask)}.cls-3{fill:none;}
+        </style>
+        <mask id="mask" x="1.03" y="7.74" width="23.98" height="18.75" maskUnits="userSpaceOnUse">
+            <path id="path-1" class="cls-1" d="M22.14 11.29l2.67 1.09.19 14.11-7.92-.4-11.1-.81-4.95-8.26.99-8.68 7.92-.6 7.21 2.9v.35l2.44 3.77 1.44-1.11 1.11-2.36z"/>
+        </mask>
+    </defs>
+    <g class="cls-2" id="Clipped">
+        <path id="Shape" class="cls-3" d="M17.61 10.7l-5.82 2.02-5.81-2.02v11.28L11.79 24l5.82-2.02L23.42 24V12.72l-3.45-1.17-2.36-.85z"/>
+    </g>
+    <path class="cls-3" d="M19.84 14.59c-.86 0-2.95-4-2.95-5.63a2.95 2.95 0 1 1 5.9 0c0 1.64-2.09 5.63-2.95 5.63z"/>
+    <path class="cls-3" d="M20.76 8.92a.84.84 0 1 1-.84-.86.85.85 0 0 1 .84.86z"/>
+    <path class="cls-3" d="M12.08 12.7v11"/>
+    <path class="cls-3" d="M18.07 12.7H18v9.54"/>
+</svg>

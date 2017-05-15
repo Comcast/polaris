@@ -1,0 +1,617 @@
+@import "variables";
+@import "mixins";
+
+@include xc-screen-reader-text;
+
+.xc-header--skip {
+    @include xc-header--link;
+    @include xc-focus;
+    position: absolute;
+    top: -25px;
+    left: 0;
+    &:focus {
+        top: 0px;
+    }
+}
+
+xc-header {
+    display: block;
+    font-family: "XfinityStandard", helvetica, arial, sans-serif;
+    font-weight: 400;
+    background-color: #000;
+    text-align: center;
+
+    &[width] {
+        .xc-header--container {
+            margin: 0 auto;
+        }
+    }
+}
+.xc-header--xfinity-logo,
+.xc-header--hamburger,
+.xc-header--personal-li:last-child {
+    display: none;
+}
+.xc-header--container {
+    height: $polaris-height;
+    position: relative;
+    display: flex;
+    padding: 0 7px;
+}
+.xc-header--slim-container {
+    padding: 0 7px;
+    text-align: center;
+    height: $polaris-slim-height;
+    border-bottom: 1px solid #EEF1F3;
+}
+
+.xc-header--container-nav {
+    flex: 2 1 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.xc-header--slim-navigation-ul {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    height: $polaris-slim-height;
+    overflow-y: auto;
+    box-sizing: border-box;
+    text-align: left;
+    list-style: none;
+}
+.xc-header--slim-navigation-li {
+    display: inline-block;
+    vertical-align: top;
+}
+.xc-header--slim-navigation-link {
+    @include xc-header--link;
+    @include xc-focus;
+    font-size: 11px;
+}
+.xc-header--slim-navigation-link {
+    text-transform: uppercase;
+    margin: 0px 12px;
+    padding: 2px 4px;
+    letter-spacing: 0.5px;
+}
+
+.xc-header--navigation-ul, .xc-header--personal-ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.xc-header--personal-ul {
+    text-align: right;
+    flex-grow: 2;
+}
+
+.xc-header--navigation-li,
+.xc-header--personal-li {
+    display: inline-block;
+    vertical-align: top;
+}
+.xc-header--signin-container {
+    text-align: right;
+    position: relative;
+    min-width: 60px;
+    padding-right: 28px;
+    margin-right: 3px;
+    &.xc-unrecognized {
+        .xc-header--signin-link {
+            display: block;
+        }
+        > .xc-header--signin-container--authenticated {
+            display: none;
+        }
+    }
+}
+
+.xc-header--signin-container--authenticated {
+    svg {
+        width: 15px;
+        height: 17px;
+        position: absolute;
+        right: 10px;
+        bottom: 9px;
+        cursor: pointer;
+
+        path {
+            fill: #9ba4aa;
+        }
+    }
+}
+
+.xc-header--notification-count--container {
+    float: right;
+    cursor: pointer;
+}
+
+.xc-header--notification-count--container[aria-expanded="true"] svg path{
+    fill: #fff;
+}
+
+.xc-header--signin-signout-link,
+.xc-header--signin-profile-link,
+.xc-header--personal-link,
+.xc-header--navigation-link,
+.xc-header--signin-link,
+.xc-header--more-link {
+    @include xc-header--link;
+    @include xc-focus;
+}
+
+.xc-header--xfinity-logo,
+.xc-header--hamburger {
+    @include xc-focus;
+}
+
+.xc-header--signin-profile-link {
+    display: block;
+    padding: 7px 0 0px 10px;
+    max-width: 80px;
+    min-height: 16px;
+    line-height: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.xc-header--signin-signout-link {
+    font-size: 11px;
+    line-height: 7px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    max-width: 85px;
+}
+
+.xc-header--navigation-link.xc-unrecognized > span {
+    display: none;
+    padding: 13px 15px;
+}
+
+.xc-header--navigation-link,
+.xc-header--signin-link {
+    text-transform: uppercase;
+    margin: 8px 12px;
+    padding: 4px;
+    letter-spacing: 0.5px;
+}
+
+.xc-header--signin-link {
+    margin-right: 0;
+    display: none;
+}
+
+.xc-header--personal-info {
+    display: block;
+    position: absolute;
+    font-size: 0;
+    height: 0;
+}
+
+.xc-header--personal-button {
+    @include xc-focus;
+    background: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+    position: relative;
+}
+.xc-header--personal-link {
+    padding: 7px 0 4px 0;
+    text-align: center;
+    width: 38px;
+    margin: 3px 6px 0;
+    line-height: 15px;
+    display: block;
+
+    > svg {
+        box-sizing: content-box;
+        display: inline-block;
+        stroke: $cool-grey;
+        fill: none;
+        width: 22px;
+        height: 22px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 6;
+
+        .wifi-bottom-circle {
+            fill: $cool-grey;
+            stroke: none;
+        }
+    }
+
+    &[name='more'] > svg {
+        fill: $cool-grey;
+        stroke: none !important;
+    }
+
+    &[name='more']:hover > svg {
+        fill: #fff;
+    }
+
+    &.xc-header--active > svg, &:hover > svg {
+        stroke: #fff;
+        .wifi-bottom-circle {
+            fill: #fff;
+        }
+    }
+}
+
+.xc-header--email-count,
+.xc-header--notification-count {
+    background: #ad1704;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 11px;
+    min-width: 13px;
+    padding: 3px;
+    position: absolute;
+    right: 0px;
+    text-align: center;
+    text-indent: 0;
+    top: 2px;
+}
+
+.xc-header--notification-count {
+    cursor: pointer;
+    border: 2px solid black;
+    padding: 2px;
+}
+
+.xc-header--personal-li {
+    position: relative;
+}
+
+.xc-header--more-ul, .xc-header--notifications-ul {
+    position: absolute;
+    top: -600px;
+    padding: 0;
+    margin: 6px 0 0 -255px;
+    background-color: #000;
+    list-style: none;
+    width: 300px;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+
+.xc-header--more-ul.xc-expanded,
+.xc-header--notifications-ul.xc-expanded {
+opacity: 1;
+top: $polaris-height;
+z-index: 9999;
+}
+.xc-header--more-ul {
+    @include shadow;
+    padding-top: 12px;
+}
+
+.xc-header--notifications-ul {
+    right: -4px;
+    margin: 4px 0 0 0;
+    background: transparent;
+}
+
+.xc-header--notifications-summary {
+    background: #000;
+    color: $cool-grey;
+    font-size: 12px;
+    height: 0px;
+    overflow: hidden;
+}
+
+.xc-header--notifications-li {
+    position: relative;
+    margin-top: 2px;
+    background: #000;
+    opacity: 1;
+    max-height: 100px;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
+    transition: all .35s ease;
+    &.xc-dismissed {
+        opacity: 0;
+        max-height: 0;
+    }
+}
+
+.xc-header--notifications-close {
+    @include xc-focus;
+    background: transparent;
+    border: 1px solid transparent;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 12px;
+    > svg {
+        stroke: $cool-grey;
+        stroke-width: 5;
+        width: 15px;
+        height: 15px;
+    }
+    &:hover > svg {
+        stroke: #fff;
+    }
+}
+
+.xc-header--notifications-p {
+    margin: 0;
+}
+
+.xc-header--notifications-sub {
+    display: block;
+    color: $cool-grey;
+    font-size: 13px;
+}
+
+.xc-header--notifications-link {
+    @include xc-focus;
+    font-size: 14px;
+    color: $cool-grey;
+    text-decoration: none;
+    text-align: left;
+    padding: 20px;
+    display: block;
+    &:hover {
+        color: #fff;
+    }
+}
+
+.xc-header--more-li {
+    display: inline-block;
+    &:last-child {
+        margin: 18px 0 24px;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.xc-header--more-link {
+    font-size: 11px;
+    text-align: center;
+    padding: 11px 8px;
+    box-sizing: border-box;
+    width: 100px;
+
+    &:hover > svg {
+        stroke: #fff;
+    }
+
+    > svg {
+        display: block;
+        stroke: $cool-grey;
+        width: 32px;
+        height: 32px;
+        margin: 0 auto 8px auto;
+    }
+}
+
+.more-from-xfinity {
+    @include roundbutton;
+    margin: 0 auto;
+    position: relative;
+}
+
+@media only screen and (max-width: 920px) {
+
+    .xc-header--slim-container {
+        display: none;
+    }
+
+    body.hamburger-opened {
+    overflow: hidden;
+    height: 100vh;
+    background: #000;
+    position: fixed;
+    }
+    .xc-header--container {
+        margin: 0;
+    }
+    .xc-header--xfinity-logo {
+     padding-top: 10px;
+     margin-left: $mobile-page-margin;
+     border: 1px solid transparent;
+     display: inline-block;
+        > svg {
+            height: 21px;
+            width: 64px;
+            fill: $cool-grey;
+        }
+        &:hover > svg {
+            fill: #fff;
+        }
+    }
+    .xc-header--notifications-ul {
+        display: block;
+        position: relative;
+        top: 0 !important;
+        right: 0;
+        padding: 0 0 150px;
+        margin: 0;
+        background-color: transparent;
+        list-style: none;
+        width: auto;
+        box-sizing: border-box;
+        opacity: 1;
+    }
+    .xc-header--notifications-summary {
+        margin-top: 15px;
+        font-size: 12px;
+        text-align: left;
+        height: auto;
+        overflow: visible;
+    }
+    .xc-header--notification-count {
+        display: none;
+    }
+    .xc-header--notifications-link {
+        padding: 20px $mobile-page-margin;
+        color: $cool-grey;
+    }
+    .xc-header--notifications-li {
+        border-top: 1px solid $cool-grey9;
+        &:last-child {
+            border-bottom: 1px solid $cool-grey9;
+        }
+    }
+    .xc-header--notifications-close {
+        padding: 8px;
+        height: 22px;
+        width: 22px;
+        stroke-width: 1;
+        top: 12px;
+    }
+    .xc-header--more-ul {
+        display: none !important;
+    }
+    .xc-header--signin-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        padding: 0 $mobile-page-margin;
+        z-index: 9999;
+        background: rgba(0,0,0,1);
+        background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+        display: none;
+          &.xc-visible {
+              display: block;
+          }
+    }
+    .xc-header--signin-profile-link {
+        display: inline-block;
+        max-width: 70%;
+        position: absolute;
+        left: $mobile-page-margin - 5;
+        bottom: $mobile-page-margin - 5;
+        font-size: 15px;
+        padding: 4px;
+    }
+    .xc-header--signin-signout-link,
+    .xc-header--signin-link {
+        font-size: 15px;
+        position: absolute;
+        right: $mobile-page-margin - 5;
+        bottom: $mobile-page-margin - 5;
+        padding: 4px;
+        text-align: center;
+        text-transform: none;
+    }
+    .xc-header--hamburger {
+        display: inline-block;
+        text-align: left;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        background: transparent;
+        font-size: 12px;
+        color: $cool-grey;
+        border: 0;
+        cursor: pointer;
+        height: $polaris-height;
+        width: 86px;
+        box-sizing: border-box;
+        position: absolute;
+        right: $mobile-page-margin - 7;
+        margin: 0;
+        border: 1px solid transparent;
+        z-index: 9999;
+        > svg {
+            display: inline-block;
+            height: 25px;
+            stroke: $cool-grey;
+            stroke-width: 5;
+            fill: $cool-grey;
+            width: 25px;
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            &:last-of-type {
+                width: 25px;
+            }
+        }
+        &:hover, &:active {
+            color: #fff;
+            > svg {
+                stroke: #fff;
+                fill: #fff;
+            }
+        }
+        &[aria-expanded='false'] {
+            > svg:last-of-type {
+                display: none;
+            }
+        }
+        &[aria-expanded='true'] {
+            text-indent: -1000em;
+            > svg:first-of-type {
+                display: none;
+            }
+        }
+    }
+     .xc-header--container-nav {
+        background: #000;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        padding: ($polaris-height - 4) $mobile-page-margin 24px;
+        left: 0;
+        width: 100%;
+        z-index: 9998;
+        height: 100vh;
+        display: none;
+        overflow-y: auto;
+        box-sizing: border-box;
+        &.xc-expanded {
+            display: block;
+        }
+    }
+    .xc-header--navigation-li,
+    .xc-header--personal-li {
+        display: block;
+        text-align: left;
+    }
+    .xc-header--personal-link > svg {
+        float: left;
+        padding: 3px 15px 0 0;
+    }
+    .xc-header--personal-li.personal-more {
+        display: none;
+    }
+    .xc-header--personal-li:last-child {
+        display: block;
+        .xc-header--personal-link > svg {
+            display: inline-block;
+            stroke-width: 2;
+            float: none;
+        }
+    }
+    .xc-header--navigation-link,
+    .xc-header--personal-link {
+        font-size: 15px;
+        text-transform: none;
+        padding: 7px 0 7px 4px;
+        margin: 4px 0 4px -5px;
+        display: inline-block;
+        text-align: left;
+        width: 95%;
+    }
+    .xc-header--navigation-link {
+        line-height: 30px;
+    }
+    .xc-header--personal-info {
+        position: static;
+        display: inline;
+        font-size: 15px;
+        line-height: 30px;
+        padding-left: 0px;
+        vertical-align: top;
+    }
+    .xc-header--email-count {
+        right: auto;
+        top: 5px;
+        left: 10px;
+    }
+}

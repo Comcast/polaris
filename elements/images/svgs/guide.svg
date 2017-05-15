@@ -1,0 +1,8 @@
+<svg focusable="false" viewBox="0 0 30 30">
+    <circle cx="6.25" cy="8" r="1.5"/>
+    <circle cx="6.25" cy="15" r="1.5"/>
+    <circle cx="6.25" cy="22" r="1.5"/>
+    <path d="M10.25 8h15"/>
+    <path d="M10.25 15h15"/>
+    <path d="M10.25 22h15"/>
+</svg>

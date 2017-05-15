@@ -1,0 +1,268 @@
+@import "variables";
+@import "mixins";
+
+xc-footer {
+    display: block;
+    background: #000;
+    text-align: left;
+    font-family: "XfinityStandard", helvetica, arial, sans-serif;
+    font-weight: 400;
+}
+.xc-footer--panels,
+.xc-footer--bottom-container {
+margin: 0 auto;
+}
+.xc-footer--panel:first-child {
+    width: 100%;
+    padding-top: 16px;
+    max-height: 999999px;
+    .xc-footer--list {
+        column-count: 4;
+        -moz-column-count: 4;
+    }
+}
+.xc-footer--panel {
+    display: inline-block;
+    width: 50%;
+}
+
+.xc-footer--heading {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: .5px;
+    margin: 0px;
+    padding: 20px 0 11px $page-margin;
+    color: #fff;
+    font-family: "XfinityStandard", helvetica, arial, sans-serif;
+    text-transform: uppercase;
+}
+.xc-footer--list {
+    margin: 0px;
+    padding-left: $page-margin;
+    list-style-type: none;
+    column-count: 2;
+    -moz-column-count: 2;
+    overflow: hidden;
+}
+.xc-footer--link,
+.xc-footer--terms-link,
+.xc-footer--copyright-link {
+    @include xc-focus;
+    font-size: 14px;
+    color: $cool-grey;
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 0 3px;
+    margin-left: -4px;
+    &:hover {
+    color: #fff;
+    }
+}
+.xc-footer--link {
+line-height: 36px;
+}
+.xc-footer--button {
+    display: none;
+}
+.xc-footer--terms-link,
+.xc-footer--copyright-link {
+    font-size: 11px;
+}
+.xc-footer--bottom {
+    background-color: #191919;
+}
+.xc-footer--bottom-container {
+    margin-top: 23px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+}
+.xc-footer--terms,
+.xc-footer--social {
+    color: $cool-grey;
+    list-style-type: none;
+    font-size: 11px;
+    line-height: 12px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.xc-footer--terms-li {
+    display: inline-block;
+    padding-right: 22px;
+    &:last-child {
+        padding-right: 0;
+    }
+}
+.xc-footer--social-li {
+    display: inline-block;
+    padding-right: 10px;
+    &:last-child {
+        padding-right: $page-margin;
+    }
+}
+.xc-footer--social-link,
+.xc-footer--comcast-logo {
+    background-image: url($sprite);
+    background-size: 88px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    border: 1px solid transparent;
+    font-size: 0;
+    color: #fff;
+}
+.xc-footer--social-link {
+    height: 29px;
+    width: 29px;
+    background-position-y: -3px;
+    position: relative;
+    z-index: 2;
+    &:before {
+      @include xc-focus-halo;
+      border-radius: 4px;
+      z-index: 1;
+      top: -6px;
+      left: -4px;
+    }
+    &:focus {
+      outline: 0;
+      &:before {
+        display: block;
+      }
+    }
+}
+.xc-footer--twitter {
+    background-position-y: -34px;
+}
+.xc-footer--youtube {
+    background-position-y: -65px;
+}
+.xc-footer--terms[terms] #xc-footer--terms:after,
+.xc-footer--terms[privacy] #xc-footer--privacy:after {
+    content: ' (Updated)';
+    color: #fff;
+}
+.xc-footer--comcast-logo {
+    @include xc-focus;
+    background-position-y: -94px;
+    background-position-x: 2px;
+    box-sizing: content-box;
+    height: 29px;
+    margin: 0 49px 0 ($page-margin - 5);
+    width: 85px;
+    padding: 4px;
+}
+.xc-footer--copyright {
+    display: block;
+    background-color: #191919;
+    border-top: 1px solid #2A2C2D;
+    margin: 0;
+    font-size: 11px;
+    line-height: 39px;
+    text-align: center
+}
+.xc-footer--copyright-link {
+    color: #DDE2E6;
+    font-weight: 400;
+}
+
+.xc-footer--toggle {
+    display: none;
+}
+
+@media only screen and (max-width: 800px) {
+    .xc-footer--panel {
+        border-bottom: 1px solid #2a2c2d;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        padding: 0 $mobile-page-margin - 5;
+        box-sizing: border-box;
+        &:first-child {
+            padding-top: 0;
+        }
+    }
+    .xc-footer--heading, .xc-footer--toggle {
+        font-size: 12px;
+        padding: 30px 4px 10px 5px;
+    }
+    .xc-footer--toggle {
+        @include xc-focus;
+        display: block;
+        font-size: 14px;
+        background: transparent;
+        cursor: pointer;
+        position: absolute;
+        right: $mobile-page-margin - 5;
+        color: $blue-deep;
+        border: 1px solid transparent;
+    }
+    .xc-footer--list {
+        padding: 0 0 18px 0;
+        display: inline-block;
+        column-count: 1 !important;
+        -moz-column-count: 1 !important;
+    }
+    .xc-footer--li {
+        &:nth-child(n+4) {
+            display: none;
+        }
+    }
+    .xc-footer--link {
+        display: block;
+        line-height: 34px;
+        /* For focus outline */
+        margin: 1px;
+    }
+    .xc-footer--bottom-container {
+        margin: 0;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 250px;
+    }
+    .xc-footer--comcast-logo {
+        height: 38px;
+        margin: 0;
+        width: 100px;
+        background-size: 110px;
+        background-position-y: -117px;
+    }
+    .xc-footer--social-li:last-child {
+        padding: 0;
+    }
+
+    .xc-footer--terms {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        height: 80px;
+    }
+    .xc-footer--terms-li {
+        padding-right: 0;
+    }
+    .xc-footer--terms-link, .xc-footer--copyright-link {
+        font-size: 14px;
+        line-height: 18px;
+    }
+    .xc-footer--terms-link {
+        padding: 0;
+    }
+    .xc-footer--toggle-hide {
+        display: none;
+    }
+    .xc-footer--panel.xc-opened {
+        .xc-footer--toggle-hide {
+            display: inline;
+        }
+        .xc-footer--toggle-show {
+            display: none;
+        }
+        .xc-footer--li {
+            &:nth-child(n+4) {
+                display: block;
+            }
+        }
+    }
+}

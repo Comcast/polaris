@@ -1,0 +1,219 @@
+{
+    "panels": [
+    {
+        "heading": { "label": "I Want To" },
+        "links": [
+            {
+            "label": "View & Pay Bill",
+            "url": "https://customer.xfinity.com/Secure/OneTimePayment",
+            "target": "_blank"
+            },
+            {
+            "label": "Check Email & Voicemail",
+            "url": "https://login.comcast.net/login?s=wnamp&cid=footer&ts=",
+            "target": "_blank"
+            },
+            {
+            "label": "Manage My Account",
+            "url": "https://customer.xfinity.com/Overview/",
+            "target": "_top"
+            },
+            {
+            "label": "Check TV Listings",
+            "url": "https://tv.xfinity.com/listings",
+            "target": "_top"
+            },
+            {
+            "label": "Watch TV Online",
+            "url": "https://tv.xfinity.com/",
+            "target": "_top"
+            },
+            {
+            "label": "Contact Customer Support",
+            "url": "https://www.xfinity.com/support/contact-us",
+            "target": "_top"
+            },
+            {
+            "label": "Get Apps",
+            "url": "https://www.xfinity.com/apps",
+            "target": "_top"
+            },
+            {
+            "label": "Check Local News & Weather",
+            "url": "http://my.xfinity.com/local/",
+            "target": "_top"
+            },
+            {
+            "label": "Manage Parental Controls",
+            "url": "https://customer.xfinity.com/Secure/OnlineParentalControls.aspx",
+            "target": "_top"
+            },
+            {
+            "label": "Download Norton Security",
+            "url": "https://constantguard.xfinity.com/",
+            "target": "_top"
+            },
+            {
+            "label": "Manage Users & Alerts",
+            "url": "https://customer.xfinity.com/#/users/me",
+            "target": "_top"
+            },
+            {
+            "label": "Reset My Password",
+            "url": "https://www.xfinity.com/password",
+            "target": "_top"
+            },
+            {
+            "label": "Find My Account Number",
+            "url": "https://customer.xfinity.com/Secure/MyAccount/",
+            "target": "_top"
+            },
+            {
+            "label": "Monitor Home Security",
+            "url": "https://home.xfinity.com",
+            "target": "_top"
+            },
+            {
+            "label": "Purchase Accessories",
+            "url": "http://store.comcast.com",
+            "target": "_top"
+            },
+            {
+            "label": "Upgrade My Service",
+            "url": "https://www.xfinity.com/upgrade-center/OffersLink",
+            "target": "_top"
+            },
+            {
+            "label": "Find My XFINITY Username",
+            "url": "https://login.comcast.net/myaccount/lookup",
+            "target": "_top"
+            },
+            {
+            "label": "Get Help & Support",
+            "url": "https://www.xfinity.com/support/",
+            "target": "_top"
+            },
+            {
+            "label": "Program My Remote",
+            "url": "https://www.xfinity.com/support/remotes",
+            "target": "_top"
+            },
+            {
+            "label": "Submit Feedback",
+            "url": "https://collect.iperceptions.com/?lID=1&rn=123531&pID=1&hs1=102214&hs2=91787&siteID=1&referrer=Link&sdfc=03b756c0-123531-0dcbb1db-cd59-44d5-8c25-4e78d3da0dac&source=91787&destination=commentcard&width=680&height=750",
+            "target": "_blank"
+            },
+            {
+            "label": "Find an XFINITY Store",
+            "url": "https://www.xfinity.com/support/service-center-locations",
+            "target": "_top"
+            },
+            {
+            "label": "Move My Services",
+            "url": "https://www.xfinity.com/moving",
+            "target": "_top"
+            }
+        ]
+    },
+    {
+        "heading": { "label": "Shop" },
+        "links": [
+            {
+            "label": "Deals & Offers",
+            "url": "https://www.xfinity.com/Corporate/shop/productoverview.html",
+            "target": "_top"
+            },
+            {
+            "label": "TV",
+            "url": "https://www.xfinity.com/Corporate/Learn/DigitalCable/digitalcable.html",
+            "target": "_top"
+            },
+            {
+            "label": "Internet",
+            "url": "https://www.xfinity.com/internet-service.html",
+            "target": "_top"
+            },
+            {
+            "label": "Voice",
+            "url": "https://www.xfinity.com/home-phone-service.html",
+            "target": "_top"
+            },
+            {
+            "label": "Home Security & Automation",
+            "url": "https://www.xfinity.com/home-security.html",
+            "target": "_top"
+            },
+            {
+            "label": "Compare the Competition",
+            "url": "https://www.xfinity.com/compare/comcast-xfinity-vs-verizon-fios.html",
+            "target": "_top"
+            },
+            {
+            "label": "Comcast Business",
+            "url": "https://business.comcast.com/",
+            "target": "_top"
+            },
+            {
+            "label": "Deals in My Area",
+            "url": "https://www.xfinity.com/locations/in-my-area.html",
+            "target": "_top"
+            },
+            {
+            "label": "Bundles",
+            "url": "https://www.xfinity.com/Corporate/Learn/Bundles/bundles.html",
+            "target": "_top"
+            }
+        ]
+    },
+    {
+        "heading": { "label": "About Comcast" },
+        "links": [
+            {
+            "label": "About Comcast",
+            "url": "http://corporate.comcast.com/news-information/company-overview",
+            "target": "_top"
+            },
+            {
+            "label": "Advertise with Us",
+            "url": "http://www.comcastspotlight.com/onlinemediakit/xfinity.html?cid=112233",
+            "target": "_blank"
+            },
+            {
+            "label": "Careers",
+            "url": "http://jobs.comcast.com/",
+            "target": "_top"
+            },
+            {
+            "label": "Press Room",
+            "url": "http://corporate.comcast.com/news-information/news-feed",
+            "target": "_top"
+            },
+            {
+            "label": "Corporate Blog",
+            "url": "http://corporate.comcast.com/comcast-voices",
+            "target": "_top"
+            },
+            {
+            "label": "Corporate Site",
+            "url": "http://corporate.comcast.com/",
+            "target": "_top"
+            },
+            {
+            "label": "Customer Agreements & Policies",
+            "url": "https://www.xfinity.com/policies/",
+            "target": "_top"
+            },
+            {
+            "label": "XFINITY Voice: Use of Personal Info",
+            "url": "https://www.xfinity.com/Corporate/Customers/Policies/CAVoiceDisclosure.html",
+            "target": "_top"
+            },
+            {
+            "label": "Site Index",
+            "url": "http://my.xfinity.com/sitemap?cid=footer",
+            "target": "_top"
+            }
+        ]
+      }
+   ]
+}

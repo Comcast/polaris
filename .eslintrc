@@ -1,0 +1,53 @@
+{
+  "extends": ["eslint:recommended", "google"],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "mocha": true,
+    "jasmine": true,
+    "node": true
+  },
+  "plugins": [
+    "ejs",
+    "html"
+  ],
+  "rules": {
+    "arrow-parens": ["error", "as-needed"],
+    "comma-dangle": ["error", "only-multiline"],
+    "eol-last": ["error", "always"],
+    "indent": ["error", 2, {"VariableDeclarator": 2, "SwitchCase": 1}],
+    "max-len": ["error", {
+      "code": 120,
+      "ignoreComments": true,
+      "ignoreRegExpLiterals": true,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true,
+      "ignoreUrls": true
+    }],
+    "new-cap": ["off"],
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "no-debugger": ["error"],
+    "no-else-return": ["error"],
+    "no-invalid-this": ["off"],
+    "no-multiple-empty-lines": ["error", {"max": 1}],
+    "no-undef": ["error"],
+    "no-var": ["off"],
+    "object-curly-spacing": ["error", "never"],
+    "one-var": ["off"],
+    "prefer-rest-params": ["off"],
+    "prefer-spread": ["off"],
+    "require-jsdoc": ["off"],
+    "quote-props": ["error", "as-needed"],
+    "valid-jsdoc": ["off"]
+  },
+  "globals": {
+    "MockInteractions": true,
+    "Promise": true,
+    "sinon": true,
+    "WCT": true
+  }
+}
