@@ -17,8 +17,9 @@ margin: 0 auto;
     padding-top: 16px;
     max-height: 999999px;
     .xc-footer--list {
-        column-count: 4;
         -moz-column-count: 4;
+        -webkit-column-count: 4;
+        column-count: 4;
     }
 }
 .xc-footer--panel {
@@ -41,8 +42,9 @@ margin: 0 auto;
     margin: 0px;
     padding-left: $page-margin;
     list-style-type: none;
-    column-count: 2;
     -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
     overflow: hidden;
 }
 .xc-footer--link,
@@ -202,8 +204,9 @@ line-height: 36px;
     .xc-footer--list {
         padding: 0 0 18px 0;
         display: inline-block;
-        column-count: 1 !important;
         -moz-column-count: 1 !important;
+        -webkit-column-count: 1 !important;
+        column-count: 1 !important;
     }
     .xc-footer--li {
         &:nth-child(n+4) {
