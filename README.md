@@ -38,3 +38,7 @@ How to generate code coverage:
 2. View the report in your browser:
 
     open coverage/index.html
+
+## Building for Release
+
+        `yarn build`
