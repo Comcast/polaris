@@ -27,7 +27,7 @@
     "css-inline-images": "^0.1.0",
     "custom-event-polyfill": "^0.3.0",
     "ejs": "^2.5.2",
-    "eslint": "^3.19.0",
+    "eslint": "^4.18.2",
     "eslint-config-google": "^0.7.1",
     "eslint-plugin-ejs": "^0.0.2",
     "eslint-plugin-html": "^2.0.3",
@@ -49,8 +49,8 @@
     "web-component-tester-istanbul": "0.10.0"
   },
   "dependencies": {
-    "@webcomponents/custom-elements": "https://github.com/webcomponents/custom-elements",
-    "@webcomponents/webcomponents-platform": "https://github.com/webcomponents/webcomponents-platform",
+    "@webcomponents/custom-elements": "^1.2.4",
+    "@webcomponents/webcomponents-platform": "^1.0.1",
     "elix": "https://github.com/elix/elix",
     "lodash-es": "^4.17.4"
   }
