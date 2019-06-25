@@ -1,21 +1,16 @@
 # Polaris
 
 Polaris is the codename for the universal Header, Footer &amp; Toast notifications for XFINITY Websites.
-This repo contais the Vanilla Web Components for those 3 custom elements.
+
+This repo contains the Vanilla Web Components for those 3 custom elements. We released this
+to provide an example of how you can build and deploy web components to share across multiple
+projects. This project is not maintained and only serves as an example. If you're interested
+in learning more about web components, check out [Open WC](https://open-wc.org)
 
 ## How to Set up Your Development Environment
 
-1. Install Yarn
-
-     Follow the instructions at https://yarnpkg.com/docs/install
-
-5. Install Polaris dependencies:
-
-        `yarn`
-
-6. Start the server:
-
-        `yarn start`
+`npm i`
+`npm start`
 
 ## Testing
 
