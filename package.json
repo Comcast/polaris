@@ -28,9 +28,8 @@
     "custom-event-polyfill": "^0.3.0",
     "ejs": "^2.5.2",
     "eslint": "^4.18.2",
-    "eslint-config-google": "^0.7.1",
-    "eslint-plugin-ejs": "^0.0.2",
-    "eslint-plugin-html": "^2.0.3",
+    "eslint-config-google": "^0.13.0",
+    "eslint-plugin-html": "^5.0.5",
     "html-minifier": "^3.1.0",
     "js-string-escape": "^1.0.1",
     "jsesc": "^2.2.0",
@@ -52,6 +51,7 @@
     "@webcomponents/custom-elements": "^1.2.4",
     "@webcomponents/webcomponents-platform": "^1.0.1",
     "elix": "https://github.com/elix/elix",
+    "eslint-plugin-ejs-js": "^0.1.0",
     "lodash-es": "^4.17.4"
   }
 }
