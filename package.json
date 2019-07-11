@@ -52,6 +52,6 @@
     "@webcomponents/custom-elements": "https://github.com/webcomponents/custom-elements",
     "@webcomponents/webcomponents-platform": "https://github.com/webcomponents/webcomponents-platform",
     "elix": "https://github.com/elix/elix",
-    "lodash-es": "^4.17.4"
+    "lodash-es": "^4.17.14"
   }
 }
