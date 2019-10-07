@@ -8,19 +8,28 @@ projects. This project is not maintained and only serves as an example. If you'r
 in learning more about web components, check out [Open WC](https://open-wc.org)
 
 ## How to Set up Your Development Environment
-
-`npm i`
-`npm start`
+```bash
+npm i
+npm start
+```
 
 ## Testing
 
-        `yarn test`
+```bash
+npm test
+```
 
 #### JavaScript Unit Testing
 
-Polaris uses [Web Component Tester](https://github.com/Polymer/web-component-tester) as its JavaScript testing framework.
+Polaris uses [Web Component Tester](https://github.com/Polymer/tools/tree/master/packages/web-component-tester) as its JavaScript testing framework.
 
-You can run WCT using `yarn test` or `wct` - install wct globally first with `yarn global add wct`
+> Install `WCT` globally
+
+```bash
+npm install -g web-component-tester
+```
+
+You can run WCT using `npm test` or `wct`
 
 #### JavaScript Code Coverage
 
@@ -28,7 +37,7 @@ Polaris uses [Istanbul](http://gotwarlost.github.io/istanbul/) in tracing JavaSc
 
 How to generate code coverage:
 
-1. Run a test `yarn test`
+1. Run a test `npm test`
 
 2. View the report in your browser:
 
@@ -36,4 +45,6 @@ How to generate code coverage:
 
 ## Building for Release
 
-        `yarn build`
+```bash
+npm run build
+```
