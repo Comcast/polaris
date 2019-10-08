@@ -36,6 +36,10 @@
     "no-multiple-empty-lines": ["error", {"max": 1}],
     "no-undef": ["error"],
     "no-var": ["off"],
+    "object-curly-spacing": [
+      "error",
+      "never"
+    ],
     "one-var": ["off"],
     "prefer-rest-params": ["off"],
     "prefer-spread": ["off"],
