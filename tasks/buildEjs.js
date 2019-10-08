@@ -3,12 +3,12 @@ const ejs = require('ejs');
 const fs = require('fs');
 
 function render(path, data) {
-  let markup = fs.readFileSync(path, 'utf8');
+  const markup = fs.readFileSync(path, 'utf8');
   return ejs.render(markup, data, {filename: path});
 }
 
 function getData(component, env, dictionary) {
-  let data = require(`../elements/${component}/${env}.json`);
+  const data = require(`../elements/${component}/${env}.json`);
   data.lang = function(label) {
     return dictionary[label] || label;
   };
@@ -19,9 +19,9 @@ function getData(component, env, dictionary) {
 }
 
 function compile(name, env, dictionary) {
-  let path = `./elements/${name}/${name}.ejs`;
-  let data = getData(name, env, dictionary);
-  let output = render(path, data);
+  const path = `./elements/${name}/${name}.ejs`;
+  const data = getData(name, env, dictionary);
+  const output = render(path, data);
   fs.writeFileSync(path.replace('.ejs', '.html'), output);
 }
 

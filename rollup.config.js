@@ -6,9 +6,9 @@ const uglify = require('rollup-plugin-uglify');
 const minify = require('uglify-js-harmony').minify;
 
 module.exports = (host, dev) => {
-  let spriteUrl = `$sprite: '${host}/sprite.png'; \n`;
+  const spriteUrl = `$sprite: '${host}/sprite.png'; \n`;
 
-  let config = {
+  const config = {
     entry: 'elements/index.js',
     moduleName: 'CX',
     format: 'iife',
@@ -17,19 +17,25 @@ module.exports = (host, dev) => {
       resolve(),
       commonjs({
         include: 'node_modules/**',
-        sourceMap: false,
+        sourceMap: false
       }),
       html({
         include: 'elements/**/*.html',
         htmlMinifierOptions: {
           collapseWhitespace: true,
           removeAttributeQuotes: true,
-          ignoreCustomFragments: [/<!--#[\s\S]*?-->/],
+          ignoreCustomFragments: [/<!--#[\s\S]*?-->/]
         }
       }),
-      sass({options: {outputStyle: 'compressed', data: spriteUrl, includePaths: ['./elements/']}}),
-      uglify({}, minify),
-    ],
+      sass({
+        options: {
+          outputStyle: 'compressed',
+          data: spriteUrl,
+          includePaths: ['./elements/']
+        }
+      }),
+      uglify({}, minify)
+    ]
   };
   if (dev) {
     config.plugins.splice(-1);

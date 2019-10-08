@@ -29,7 +29,7 @@ export default function XCBaseMixin(base) {
     attributeChangedCallback(name, oldValue, newValue) {
       var handler = this[this._attrToCamel(name) + 'Changed'];
       this._properties[name] = newValue === '' || newValue === 'true' || newValue;
-      if(handler && this._connected) {
+      if (handler && this._connected) {
         handler.call(this, oldValue, this._properties[name]);
       }
     }
@@ -47,7 +47,7 @@ export default function XCBaseMixin(base) {
             this.setAttribute(name, value);
           } else if (typeof value === 'boolean') {
             value ? this.setAttribute(name, value) : this.removeAttribute(name);
-          } else if(this._connected) {
+          } else if (this._connected) {
             this.attributeChangedCallback(name, oldValue, value);
           }
         }
@@ -110,8 +110,8 @@ export default function XCBaseMixin(base) {
 
       Array.prototype.forEach.call(elementChildren, function(child) {
         if (child !== this &&
-              (!child.hasAttribute('aria-hidden')
-              || child.getAttribute('aria-hidden') !== 'true')) {
+              (!child.hasAttribute('aria-hidden') ||
+              child.getAttribute('aria-hidden') !== 'true')) {
           child.setAttribute('aria-hidden', 'true');
           hidden.push(child);
         }
@@ -144,7 +144,7 @@ export default function XCBaseMixin(base) {
     _onEscape(callback, event) {
       var ESCAPE = 27;
 
-      if(event.keyCode === ESCAPE) {
+      if (event.keyCode === ESCAPE) {
         callback(event);
         event.preventDefault();
       }
