@@ -340,6 +340,5 @@ export default class XCHeader extends XCBaseMixin(HTMLElement) {
     target.scrollIntoView();
     target.focus();
   }
-
 }
 customElements.define(XCHeader.is, XCHeader);

@@ -25,24 +25,24 @@ function writeFile(name, output) {
 }
 
 function buildComponent(env, language, config) {
-  let dictionary = require(`../elements/data/languages/${language}.json`);
+  const dictionary = require(`../elements/data/languages/${language}.json`);
 
   components.forEach(c => {
     ejs(c, env, dictionary);
   });
 
   return rollup(config).then(bundle => {
-    let result = bundle.generate({
+    const result = bundle.generate({
       format: 'iife'
     });
 
-    let polyfillOutput = babel.transform(result.code, {
+    const polyfillOutput = babel.transform(result.code, {
       presets: ['es2015-ie'],
       compact: false,
       retainLines: true,
     });
     writeFile(`${dist}/polaris.polyfill.legacy.${env}.${language}.js`,
-        [platformPolyfill, customElementsPolyfill, polyfillOutput.code].join('\n'));
+      [platformPolyfill, customElementsPolyfill, polyfillOutput.code].join('\n'));
 
     writeFile(`${dist}/polaris.polyfill.${env}.${language}.js`, customElementsPolyfill + '\n' + result.code);
     writeFile(`${dist}/polaris.${env}.${language}.js`, result.code);
@@ -53,7 +53,7 @@ function buildComponents(envs, languages, hosts, dev) {
   let chain;
 
   envs.forEach(env => {
-    let config = rollupConfig(hosts[env], dev);
+    const config = rollupConfig(hosts[env], dev);
 
     languages.forEach(language => {
       if (chain) {
@@ -76,9 +76,9 @@ function build(options = {}) {
   }
 
   buildComponents(options.envs || envs,
-                  options.languages || languages,
-                  options.hosts || hosts,
-                  options.dev);
+    options.languages || languages,
+    options.hosts || hosts,
+    options.dev);
 }
 build();
 
